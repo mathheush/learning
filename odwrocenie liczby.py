@@ -7,5 +7,7 @@ while (a > 0):
     y = (y * 10) + x
     a = a // 10
 
+#siemano
+
 
 print(y)
