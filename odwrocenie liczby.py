@@ -8,6 +8,6 @@ while (a > 0):
     a = a // 10
 
 #siemano
-
+nie wiem cxemu ti nie chce dziala
 
 print(y)
