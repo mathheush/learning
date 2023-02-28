@@ -31,15 +31,14 @@ def currency():
     for currency_id in currency_all:
         curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{currency_id}/2023-02-24/?format=json')
         curr = curr.json()
-        curr = curr['rates']
-        curr = curr[0]
+        curr = curr['rates'][0]
         bid = curr.get('bid')
         ask = curr.get('ask')
         bid = float(round(bid, 2))
         ask = float(round(ask, 2))
         bid = str(bid)
         ask = str(ask)
-        print(currency_id,"     ", bid,"      ",  ask )
+        print(currency_id,"     ", bid,"      ", ask )
     print("")
     welcome()
 
