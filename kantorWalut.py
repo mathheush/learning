@@ -42,6 +42,7 @@ def currency():
     print("")
     welcome()
 
+
 def sell():
     global amount
     amount = input("Ile chcesz sprzedać PLN:")
