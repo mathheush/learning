@@ -120,7 +120,6 @@ def exchange():
         welcome()
     else: print("Podaj prawidłową wartość lub wpisz \"q\" aby wrócić."), exchange()
 
-
 def ask():
     global ask
     global amount
