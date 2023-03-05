@@ -1,7 +1,6 @@
 import json
 import requests
 
-
 print("Witaj w kantorze walut.\n")
 def welcome():
 
