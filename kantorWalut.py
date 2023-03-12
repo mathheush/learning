@@ -56,7 +56,7 @@ def sell():
 def exchange1():
     global p
     global id
-    p = input("Wybierz na jaką walutę posiadasz:\n"
+    p = input("Wybierz jaką walutę posiadasz:\n"
               "1. dolar amerykański\n"
               "2. euro\n"
               "3. funt\n"
@@ -90,10 +90,11 @@ def buy():
     bid = float(round(bid, 2))
     print("Aktualny kurs wynosi:")
     print(bid, "PLN", "za 1", id)
-    amount = int(amount)
+    amount = float(amount)
     money = amount * bid
     money = float(round(money, 2))
     print("Otrzymasz", money, "PLN", "za", amount, id)
+    welcome()
 
 def exchange():
     global p
@@ -131,9 +132,10 @@ def ask():
     ask = float(round(ask, 2))
     print("Aktualny kurs wynosi:")
     print(ask, "PLN", "za 1", id)
-    amount = int(amount)
+    amount = float(amount)
     money = amount / ask
     money = float(round(money, 2))
     print("Otrzymasz", money, id, "za", amount, "PLN")
+    welcome()
 
 welcome()
