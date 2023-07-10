@@ -29,7 +29,7 @@ def currency():
     print("\nOto aktualne kursy wybranych walut względem PLN:")
     print("Waluta    Sprzedaż    Kupno")
     for currency_id in currency_all:
-        curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{currency_id}/2023-02-24/?format=json')
+        curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{currency_id}/today/?format=json')
         curr = curr.json()
         curr = curr['rates'][0]
         bid = curr.get('bid')
@@ -82,7 +82,7 @@ def buy():
     global amount
     global bid
     amount = input(f"Ile chcesz sprzedać {id}:")
-    curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{id}/2023-02-24/?format=json')
+    curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{id}/today/?format=json')
     curr = curr.json()
     curr = curr['rates']
     curr = curr[0]
@@ -124,7 +124,7 @@ def exchange():
 def ask():
     global ask
     global amount
-    curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{id}/2023-02-24/?format=json')
+    curr = requests.get(f'http://api.nbp.pl/api/exchangerates/rates/c/{id}/today/?format=json')
     curr = curr.json()
     curr = curr['rates']
     curr = curr[0]
