@@ -2,8 +2,9 @@ import json
 import requests
 
 print("Witaj w kantorze walut.\n")
-def welcome():
 
+
+def welcome():
     x = input("Wpisz \"1\", jeśli chcesz sprzedać PLN.\n"
               "Wpisz \"2\", jeśli chcesz kupić PLN.\n"
               "Wpisz \"3\", jeśli chcesz zobaczyć aktualny kurs najpopularniejszych walut.\n"
@@ -22,7 +23,9 @@ def welcome():
     elif x == "q":
         pass
 
-    else: print("Nieznana operacja. Spróbuj ponownie: \n"), welcome()
+    else:
+        print("Nieznana operacja. Spróbuj ponownie: \n"), welcome()
+
 
 def currency():
     currency_all = ("EUR", "CHF", "USD", "GBP")
@@ -38,7 +41,7 @@ def currency():
         ask = float(round(ask, 3))
         bid = str(bid)
         ask = str(ask)
-        print(currency_id,"     ", bid,"      ", ask )
+        print(currency_id, "     ", bid, "      ", ask)
     print("")
     welcome()
 
@@ -49,9 +52,13 @@ def sell():
     if amount == "q":
         welcome()
     else:
-        try: int(amount)
-        except: print("Podaj prawidłową ilość lub wpisz \"q\" aby wrócić."), sell()
-        else: exchange()
+        try:
+            int(amount)
+        except:
+            print("Podaj prawidłową ilość lub wpisz \"q\" aby wrócić."), sell()
+        else:
+            exchange()
+
 
 def exchange1():
     global p
@@ -78,6 +85,7 @@ def exchange1():
     else:
         print("Podaj prawidłową wartość lub wpisz \"q\" aby wrócić."), exchange1()
 
+
 def buy():
     global amount
     global bid
@@ -96,13 +104,14 @@ def buy():
     print("Otrzymasz", money, "PLN", "za", amount, id)
     welcome()
 
+
 def exchange():
     global p
     global id
     p = input("Wybierz na jaką walutę chcesz wymienić:\n"
-             "1. dolar amerykański\n"
-             "2. euro\n"
-             "3. funt\n"
+              "1. dolar amerykański\n"
+              "2. euro\n"
+              "3. funt\n"
               "4. frank szwajcarski\n")
 
     if p == "1":
@@ -119,7 +128,9 @@ def exchange():
         ask()
     elif p == "q":
         welcome()
-    else: print("Podaj prawidłową wartość lub wpisz \"q\" aby wrócić."), exchange()
+    else:
+        print("Podaj prawidłową wartość lub wpisz \"q\" aby wrócić."), exchange()
+
 
 def ask():
     global ask
@@ -137,5 +148,6 @@ def ask():
     money = float(round(money, 2))
     print("Otrzymasz", money, id, "za", amount, "PLN")
     welcome()
+
 
 welcome()
