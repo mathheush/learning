@@ -34,8 +34,8 @@ def currency():
         curr = curr['rates'][0]
         bid = curr.get('bid')
         ask = curr.get('ask')
-        bid = float(round(bid, 2))
-        ask = float(round(ask, 2))
+        bid = float(round(bid, 3))
+        ask = float(round(ask, 3))
         bid = str(bid)
         ask = str(ask)
         print(currency_id,"     ", bid,"      ", ask )
